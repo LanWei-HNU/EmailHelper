@@ -7,15 +7,26 @@
 	<bean id="helloWorld" class="com.lw.emailsender.HelloWorld">
 		<property name="name" value="String"></property>
 	</bean>
+	
+	
+	<bean id="sendMailService" class="com.lw.emailsender.service.SendMailServiceImpl">
+	</bean>
 
+	<!-- 左右面板 -->
 	<bean id="leftPanel" class="com.lw.emailsender.view.LeftPanel">
 	</bean>
 	<bean id="rightPanel" class="com.lw.emailsender.view.RightPanel">
 	</bean>
 
+	<bean id="sysListener" class="com.lw.emailsender.listener.SysListener">
+		<constructor-arg ref="leftPanel" />
+		<constructor-arg ref="rightPanel" />
+		<constructor-arg ref="sendMailService" />
+	</bean>
 	<bean id="mainFrame" class="com.lw.emailsender.view.MainFrame">
-		<constructor-arg  ref="leftPanel"/>
-		<constructor-arg  ref="rightPanel"/>
+		<constructor-arg ref="leftPanel" />
+		<constructor-arg ref="rightPanel" />
+		<constructor-arg ref="sysListener" />
 	</bean>
 
 

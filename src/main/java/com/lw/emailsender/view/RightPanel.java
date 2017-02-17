@@ -16,8 +16,9 @@ public class RightPanel extends JPanel {
 	private static final Font font3 = new Font("隶书",1,14);
 	
 	
-	
+	//日志文本区域
 	private JTextArea logTextArea;
+	//滚动条
 	private JScrollPane jsp;
 	
 	public RightPanel() {
@@ -40,6 +41,12 @@ public class RightPanel extends JPanel {
 		
 		System.out.println("右面板构造完成! ");
 	}
-	
+
+	public JTextArea getLogTextArea() {
+		return logTextArea;
+	}
+	public JScrollPane getJsp() {
+		return jsp;
+	}
 	
 }

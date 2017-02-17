@@ -2,25 +2,26 @@ package com.lw.emailsender.view;
 
 import java.awt.BorderLayout;
 import java.awt.HeadlessException;
+import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
-import java.io.IOException;
 
 import javax.swing.JFrame;
-import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 public class MainFrame extends JFrame {
 
 	private static final long serialVersionUID = 1L;
 
-	private JPanel leftPanel;
-	private JPanel rightPanel;
+	private LeftPanel leftPanel;
+	private RightPanel rightPanel;
+	private ActionListener sysListener;
 
-	public MainFrame(JPanel leftPanel,JPanel rightPanel) throws HeadlessException {
+	public MainFrame(LeftPanel leftPanel,RightPanel rightPanel,ActionListener sysListener) throws HeadlessException {
 		super();
 		this.leftPanel = leftPanel;
 		this.rightPanel = rightPanel;
+		this.sysListener=sysListener;
 
 		this.setSize(430 + 600, 500);								// 设置窗体大小
 		this.setTitle("群发邮件助手");									// 设置窗体标题
@@ -42,11 +43,18 @@ public class MainFrame extends JFrame {
 	}
 
 	public void showUI() {
+		//添加面板
 		this.add("West", leftPanel);
 		this.add("East",rightPanel);
-
+		//绑定监听器
+		this.leftPanel.getVerifyEmailBtn().addActionListener(sysListener);
+		this.leftPanel.getSelectFileBtn().addActionListener(sysListener);
+		this.leftPanel.getSendBtn().addActionListener(sysListener);
+		
 		// 设置窗体可见
 		this.setVisible(true);
+		
+		
 	}
 
 }

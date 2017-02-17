@@ -40,7 +40,7 @@ public class LeftPanel extends JPanel {
 
 	private JTextField hostNameField;
 	private JTextField emailAbbrField;
-	private JTextField emailPwdField;
+	private JPasswordField emailPwdField;
 	private JTextField subjectField;
 	private JTextField displayNameField;
 	private JTextField nameColField;
@@ -50,6 +50,7 @@ public class LeftPanel extends JPanel {
 	private JButton selectFileBtn;
 	private JButton sendBtn;
 
+	
 	public LeftPanel() {
 		super();
 		this.setPreferredSize(PANEL_SIZE);
@@ -90,7 +91,7 @@ public class LeftPanel extends JPanel {
 		this.add(emailPwdLabel);
 		this.add(emailPwdField);
 
-		this.verifyEmailBtn = new JButton(Constant.BUTTON_CHECK_CMD);
+		this.verifyEmailBtn = new JButton(Constant.BUTTON_VERIFY_CMD);
 		this.add(verifyEmailBtn);
 
 		this.subjectLabel = new JLabel("邮件标题 ");
@@ -150,6 +151,70 @@ public class LeftPanel extends JPanel {
 		this.add(emailColField);
 
 		System.out.println("左面板构造完成! ");
+	}
+	
+	public JLabel getHostNameLabel() {
+		return hostNameLabel;
+	}
+	public JLabel getProtocolLabel() {
+		return protocolLabel;
+	}
+	public JLabel getEmailAbbrLabel() {
+		return emailAbbrLabel;
+	}
+	public JLabel getEmailPwdLabel() {
+		return emailPwdLabel;
+	}
+	public JLabel getSubjectLabel() {
+		return subjectLabel;
+	}
+	public JLabel getDisplayNameLabel() {
+		return displayNameLabel;
+	}
+	public JLabel getFilePathLabel() {
+		return filePathLabel;
+	}
+	public JLabel getTipLabel() {
+		return tipLabel;
+	}
+	public JLabel getNameColLabel() {
+		return nameColLabel;
+	}
+	public JLabel getEmailColLabel() {
+		return emailColLabel;
+	}
+	public JComboBox<String> getProtocolComBox() {
+		return protocolComBox;
+	}
+	public JTextField getHostNameField() {
+		return hostNameField;
+	}
+	public JTextField getEmailAbbrField() {
+		return emailAbbrField;
+	}
+	public JPasswordField getEmailPwdField() {
+		return emailPwdField;
+	}
+	public JTextField getSubjectField() {
+		return subjectField;
+	}
+	public JTextField getDisplayNameField() {
+		return displayNameField;
+	}
+	public JTextField getNameColField() {
+		return nameColField;
+	}
+	public JTextField getEmailColField() {
+		return emailColField;
+	}
+	public JButton getVerifyEmailBtn() {
+		return verifyEmailBtn;
+	}
+	public JButton getSelectFileBtn() {
+		return selectFileBtn;
+	}
+	public JButton getSendBtn() {
+		return sendBtn;
 	}
 
 }
