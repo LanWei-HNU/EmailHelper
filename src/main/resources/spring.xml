@@ -5,8 +5,19 @@
 
 	<!-- 配置bean -->
 	<bean id="helloWorld" class="com.lw.emailsender.HelloWorld">
-		<property name="name" value="Spring"></property>
+		<property name="name" value="String"></property>
 	</bean>
+
+	<bean id="leftPanel" class="com.lw.emailsender.view.LeftPanel">
+	</bean>
+	<bean id="rightPanel" class="com.lw.emailsender.view.RightPanel">
+	</bean>
+
+	<bean id="mainFrame" class="com.lw.emailsender.view.MainFrame">
+		<constructor-arg  ref="leftPanel"/>
+		<constructor-arg  ref="rightPanel"/>
+	</bean>
+
 
 	<!-- <context:component-scan base-package="com.lw.emailsende" /> -->
 </beans>
